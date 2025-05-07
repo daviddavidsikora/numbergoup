@@ -1,0 +1,84 @@
+/* src/style.css */
+:root {
+  --color-foreground: #d9ddb8; /* light parchment */
+  --color-background: #1f281f; /* deep moss green */
+
+  --color-rich-brown: #3b3228;
+  --color-burnt-clay: #ca5f4b;
+  --color-sage-green: #91ad6d;
+  --color-dried-sunflower: #d9b471;
+  --color-faded-seafoam: #8cbea3;
+  --color-dusty-lavender: #9e7e9f;
+  --color-mint-herb: #97bda1;
+  --color-soft-linen: #f5f5dc; /* Use if needed, overlaps with foreground */
+
+  /* UI Specific Colors from Palette */
+  --text-color: var(--color-foreground);
+  --text-color-dark: var(--color-rich-brown);
+  --background-color-main: var(--color-background);
+  --card-background-color: var(--color-foreground); /* Main elements on the background */
+  --card-text-color: var(--color-rich-brown); /* Text on cards */
+  --button-background-color: var(--color-sage-green);
+  --button-text-color: var(--color-soft-linen);
+  --button-hover-background-color: var(--color-burnt-clay);
+  --accent-color-1: var(--color-dried-sunflower);
+  --accent-color-2: var(--color-faded-seafoam);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean font stack */
+  background-color: var(--background-color-main);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center; /* Simple centering for the overall app */
+  padding-top: 40px; /* Give some space from the top */
+}
+
+/* Basic button styling (can be overridden in components) */
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--button-hover-background-color);
+  transform: translateY(-1px);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0px);
+}
+
+button:disabled {
+  background-color: var(--color-rich-brown);
+  color: #999088; /* Muted rich brown for disabled text */
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Utility class for slight card effect */
+.card {
+  background-color: var(--card-background-color);
+  color: var(--card-text-color);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  display: inline-block; /* For centering if app is text-align: center */
+  text-align: left; /* Reset text align for card content */
+}
